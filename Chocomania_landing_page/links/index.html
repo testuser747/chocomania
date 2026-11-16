@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocomania | Links</title>
+    
+    <!-- Google Fonts for Bold Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for minimalist iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS for layout and utilities -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'brutal': '6px 6px 0px 0px rgba(0,0,0,1)',
+                        'brutal-hover': '2px 2px 0px 0px rgba(0,0,0,1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ==========================================================
+           🎨 CUSTOMIZATION PANEL
+           Change the variables below to update your bakery's branding
+           ========================================================== */
+        :root {
+            /* 1. BRAND COLORS */
+            --color-background: #F4F0EA; /* A warm, light dough color */
+            --color-text: #111111;       /* Deep, bold black */
+            
+            --color-btn-bg: #111111;     /* Button background */
+            --color-btn-text: #F4F0EA;   /* Button text color */
+            
+            --color-btn-hover-bg: #E2DCD0; /* Button background on hover */
+            --color-btn-hover-text: #111111; /* Button text on hover */
+
+                /* 2. IMAGES & LOGO */
+                /* Replace the URL with the link to your actual logo image */
+                --logo-image: url('images/black.png');
+            
+            /* Add a background image URL if you want one. 
+               Example: url('https://your-image-link.com/bg.jpg') */
+            --bg-image: none; 
+            
+            /* If you add a background image, this controls how dark the overlay is 
+               (0 is completely clear, 1 is completely black) to keep text readable */
+            --bg-overlay-opacity: 0; 
+        }
+
+        /* ==========================================================
+           CORE STYLES (Powered by your variables above)
+           ========================================================== */
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text);
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Overlay for background images to ensure contrast */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-background);
+            opacity: var(--bg-overlay-opacity);
+            z-index: -1;
+        }
+
+        .logo-placeholder {
+            background-image: var(--logo-image);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: none;
+            background-color: transparent;
+        }
+
+        .link-button {
+            background-color: var(--color-btn-bg);
+            color: var(--color-btn-text);
+            border: 3px solid var(--color-btn-bg);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .link-button:hover, .link-button:focus {
+            background-color: var(--color-btn-hover-bg);
+            color: var(--color-btn-hover-text);
+            border-color: var(--color-text);
+            transform: translateY(-2px);
+        }
+        
+        .link-button:active {
+            transform: translateY(2px);
+        }
+
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-6 sm:p-10 selection:bg-black selection:text-white">
+
+    <!-- MAIN CONTAINER -->
+    <main class="w-full max-w-lg mx-auto flex flex-col items-center animate-fade-in-up mt-8 mb-16">
+        
+        <!-- LOGO -->
+        <div class="logo-placeholder w-48 h-48 sm:w-56 sm:h-56 mb-6 transition-transform hover:scale-105 duration-300"></div>
+
+        <!-- HEADER & BIO -->
+        <div class="text-center mb-10 w-full">
+            <h1 class="text-4xl sm:text-5xl font-black mb-3 tracking-tight">Chocomania</h1>
+            <p class="text-lg sm:text-xl font-medium opacity-80 leading-relaxed max-w-sm mx-auto">
+                Freshly baked cakes in Durg.
+            </p>
+        </div>
+
+        <!-- LINKS SECTION -->
+        <nav class="w-full flex flex-col gap-4 sm:gap-5">
+            
+            <!-- Link 1: WhatsApp -->
+            <a href="https://wa.me/917000671411?text=Hi!%20I%20would%20like%20to%20place%20an%20order." class="link-button w-full flex items-center justify-center gap-3 py-4 px-6 rounded-full font-bold text-xl tracking-wide shadow-brutal hover:shadow-brutal-hover">
+                <i class="ph ph-whatsapp-logo text-2xl"></i>
+                <span>WhatsApp</span>
+            </a>
+
+            <!-- Link 2: Call -->
+            <a href="tel:+917000671411" class="link-button w-full flex items-center justify-center gap-3 py-4 px-6 rounded-full font-bold text-xl tracking-wide shadow-brutal hover:shadow-brutal-hover">
+                <i class="ph ph-phone-outgoing text-2xl"></i>
+                <span>Call</span>
+            </a>
+
+            <!-- Link 3: Instagram -->
+            <a href="https://www.instagram.com/chocomaniaindia/" class="link-button w-full flex items-center justify-center gap-3 py-4 px-6 rounded-full font-bold text-xl tracking-wide shadow-brutal hover:shadow-brutal-hover">
+                <i class="ph ph-instagram-logo text-2xl"></i>
+                <span>Instagram</span>
+            </a>
+
+            <!-- Link 4: Google Maps -->
+            <a href="https://maps.app.goo.gl/439FRyNPxueLRrUW6" class="link-button w-full flex items-center justify-center gap-3 py-4 px-6 rounded-full font-bold text-xl tracking-wide shadow-brutal hover:shadow-brutal-hover">
+                <i class="ph ph-map-pin text-2xl"></i>
+                <span>Find us on Maps</span>
+            </a>
+
+        </nav>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto pb-4 text-center opacity-60 font-semibold text-sm">
+        <p>&copy; 2026 Chocomania. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
